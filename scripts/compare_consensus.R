@@ -48,5 +48,5 @@ colnames(diff) <- sapply(files, function(x){
 rownames(diff) <- c("Geneious vs iVar", "iVar vs Reference", "Geneious vs Reference")
 
 pdf("../plots/consensus.pdf")
-ggplot(melt(t(diff)), aes(y=Var1, x=Var2)) + geom_tile(aes(fill = value), color="#000000") + geom_text(aes(y=Var1, x = Var2, label = value))  + scale_fill_gradient(low="#FFFFFF", high = "#FF0000") + theme_classic() + theme(axis.line <- element_blank(), axis.text.x = element_text(angle = 90, hjust = 1)) + xlab("Differences in Aligment") + ylab("Consensus Sequences") + ggtitle("Comparison of consensus calling using Geneious and iVar")
+ggplot(melt(t(diff)), aes(y=Var1, x=Var2)) + geom_tile(aes(fill = value), color="#000000") + geom_text(aes(y=Var1, x = Var2, label = value))  + scale_fill_gradient(low="#FFFFFF", high = "#FF0000") + theme_classic(base_size=18) + theme(axis.line <- element_blank(), axis.text.x = element_text(angle = 90, hjust = 1)) + xlab("Nucleotide Differences") + ylab("Consensus Sequences") + ggtitle("Validation of consensus calling")
 dev.off()
