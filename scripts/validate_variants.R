@@ -37,9 +37,10 @@ plot.snp <- function(prefix){
     ## Remove indels from iVar output
     df.ivar.snv <- df.ivar[grep("^-|^\\+", df.ivar$ALT, value = FALSE, invert=TRUE),]
     ## Get only maximum per position because VarScan reports only 1 variant per site(assumes a diploid genome).
-    df.ivar.snv.max <- aggregate(FREQ ~ POS, df.ivar.snv, max)
+    df.ivar.snv.max <- aggregate(ALT_FREQ ~ POS, df.ivar.snv, max)
     df.ivar.snv <- merge(df.ivar.snv, df.ivar.snv.max)
     df.ivar.snv <- df.ivar.snv[with(df.ivar.snv, order(POS)),]
+    colnames(df.ivar.snv)[2] <- "FREQ"
     merged.col <- merge(df.ivar.snv[,c("POS", "FREQ", "mode")], df.varscan[,c("POS", "FREQ", "mode")], by="POS", suffixes=c(".ivar", ".varscan"))
     merged.col[,"FREQ.ivar"] <- round(merged.col[,"FREQ.ivar"], 4)
     merged.col[,"FREQ.varscan"] <- round(merged.col[,"FREQ.varscan"], 4)
@@ -61,9 +62,10 @@ plot.indel <- function(prefix){
     ## Remove indels from iVar output
     df.ivar.snv <- df.ivar[grep("^-|^\\+", df.ivar$ALT, value = FALSE),]
     ## Get only maximum per position because VarScan reports only 1 variant per site(assumes a diploid genome).
-    df.ivar.snv.max <- aggregate(FREQ ~ POS, df.ivar.snv, max)
+    df.ivar.snv.max <- aggregate(ALT_FREQ ~ POS, df.ivar.snv, max)
     df.ivar.snv <- merge(df.ivar.snv, df.ivar.snv.max)
     df.ivar.snv <- df.ivar.snv[with(df.ivar.snv, order(POS)),]
+    colnames(df.ivar.snv)[2] <- "FREQ"
     merged.col <- merge(df.ivar.snv[,c("POS", "FREQ", "mode")], df.varscan[,c("POS", "FREQ", "mode")], by="POS", suffixes=c(".ivar", ".varscan"))
     merged.col[,"FREQ.ivar"] <- round(merged.col[,"FREQ.ivar"], 4)
     merged.col[,"FREQ.varscan"] <- round(merged.col[,"FREQ.varscan"], 4)

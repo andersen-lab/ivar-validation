@@ -1,0 +1,3 @@
+Chrom	Position	Ref	Var	Cons:Cov:Reads1:Reads2:Freq:P-value	StrandFilter:R1+:R1-:R2+:R2-:pval	SamplesRef	SamplesHet	SamplesHom	SamplesNC	Cons:Cov:Reads1:Reads2:Freq:P-value
+Puerto	118	C	+A	*/+A:813:659:146:17.96%:8.0441E-48	Pass:1.0:659:0:146:0:1E0	0	1	0	0	*/+A:813:659:146:17.96%:8.0441E-48
+Puerto	326	G	+A	*/+A:771:718:46:5.94%:7.0692E-15	Pass:0.0:0:718:0:46:1E0	0	1	0	0	*/+A:771:718:46:5.94%:7.0692E-15
