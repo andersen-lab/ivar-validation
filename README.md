@@ -19,3 +19,9 @@ Repository contains scripts used to validation of trimming, consensus calling an
 |  trim   | [cutadapt](https://github.com/marcelm/cutadapt/), [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)|
 | consensus | [Geneious](https://www.geneious.com/) |
 | variants | [VarScan2](https://dkoboldt.github.io/varscan/) |
+
+---
+**Andersen Lab**  
+The Scripps Research Institute  
+La Jolla, CA, USA  
+[data@andersen-lab.com](mailto:data@andersen-lab.com)
